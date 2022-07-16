@@ -1,6 +1,6 @@
 # IAN (TIP 2022)
 ## Introduction
-This repository is the official implementation of **Designing An Illumination-Aware Network for Deep Image Relighting**. [[Paper (TBD)]]()
+This repository is the official implementation of **Designing An Illumination-Aware Network for Deep Image Relighting**. [[Paper (TBD)]]() <a href="#demos">[Demos]</a>
 > Designing An Illumination-Aware Network for Deep Image Relighting
 > 
 > [Zuo-Liang Zhu](https://github.com/NK-CS-ZZL), [Zhen Li](https://paper99.github.io/), [Rui-Xun Zhang](https://www.math.pku.edu.cn/teachers/ZhangRuixun%20/index.html), [Chun-Le Guo](https://mmcheng.net/clguo/), [Ming-Ming Cheng](https://mmcheng.net/)
@@ -82,8 +82,7 @@ The code is released under [Creative Commons Attribution-NonCommercial 4.0 Inter
 + Physically Inspired Dense Fusion Networks for Relighting [[Paper](https://arxiv.org/abs/2105.02209)]
 + LPIPS [[Github]](https://github.com/S-aiueo32/lpips-pytorch) [[Paper]](https://arxiv.org/abs/1801.03924)
 
-## More demos
-
+<h2 id="demos"> More demos </h2>
 
 https://user-images.githubusercontent.com/50139523/179356102-14bac41f-7caf-409c-b1c7-75eb315ef881.mp4
 
