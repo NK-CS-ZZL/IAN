@@ -1,0 +1,54 @@
+name: exp
+model_type: PyramidRelightingModel
+layers: 1
+scale_factor: 2
+interp_mode: bicubic
+gpu_id: '0'
+scale: 1
+crop_border: ~  
+num_gpu: 1  # set num_gpu: 0 for cpu mode
+manual_seed: 0
+rank: 0
+parallel: False
+datasets:
+  test_1:  # the 1st test dataset
+    name: VIDIT
+    type: PairedImageWithAuxiliaryDataset
+    dataroot_gt: ./data/one2one/validation/target
+    dataroot_input: ./data/one2one/validation/input
+    dataroot_auxiliary: 
+      - ./data/one2one/validation/normals
+      - ./data/one2one/validation/depth
+    auxiliary_type: '.npy'
+    auxiliary_dim: 
+      - 3
+      - 1
+
+
+# network structures
+network_g:
+  type: One2One
+  aux_channels: 4
+  short_connection: false
+
+
+val:
+  save_tb_img: false
+  save_tb_select: ~ 
+  save_img: true
+
+  metrics:
+    psnr:
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: false
+    ssim: # metric name, can be arbitrary
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: false
+
+
+# path
+path:
+  pretrain_network_g: ~
+  strict_load_g: true

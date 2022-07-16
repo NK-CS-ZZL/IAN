@@ -1,0 +1,110 @@
+name: Any2Any_4btnk_woaux_continue
+model_type: PyramidAnyRelightingModel
+layers: 3
+scale_factor: 2
+interp_mode: bicubic
+scale: 1
+num_gpu: 1 # set num_gpu: 0 for cpu mode
+gpu_id: "0"
+manual_seed: 10
+rank: 0
+world_size: 1
+parallel: True
+
+
+datasets:
+  train:
+    name: DPRData
+    type: DPRDataset
+    dataroot: data/DPR_dataset
+
+    gt_size: 0
+
+    # data loader
+    use_shuffle: true
+    num_worker_per_gpu: 5
+    batch_size_per_gpu: 5
+    dataset_enlarge_ratio: 1
+    prefetch_mode: ~
+
+  val:
+    name: DPRData
+    type: DPRDataset
+    test_mode: true
+    dataroot: data/DPR_dataset
+
+# network structures
+network_g:
+  type: "Any2Any_woaux"
+  in_channels: 3
+  aux_channels: 3
+  light_probe_channels: 9
+  short_connection: false
+
+# path
+path:
+  pretrain_network_g: ~
+  strict_load_g: true
+  resume_state: ~
+
+# training settings
+train:
+  optim_g:
+    type: Adam
+    lr: !!float 1e-4
+    weight_decay: 0
+    betas: [0.9, 0.99]
+
+  total_iter: 72000
+  warmup_iter: -1  # no warm up
+  decay_freq: 72000 # no decay
+  gamma: 0.5
+
+  # losses
+  pixel_opt:
+      type: L1Loss
+      loss_weight: 1.0
+      reduction: mean
+  # ssim_opt:
+  #     type: SSIMLoss
+  #     loss_weight: 1
+  grad_opt:
+      type: GradientLoss
+      loss_weight: 1.0
+      reduction: mean
+
+
+# validation settings
+val:
+  val_freq: !!float 3000
+  save_img: false
+  save_tb_img: false
+  save_tb_select: 
+    - Image3331
+
+  metrics:
+    psnr:
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: false
+    ssim: # metric name, can be arbitrary
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: false
+  best_metrics: 
+    name: psnr
+    greater: True
+    val: !!float 0
+    iter: !!int 0
+  best_metrics2: 
+    name: ssim
+    greater: True
+    val: !!float 0
+    iter: !!int 0
+
+# logging settings
+logger:
+  print_freq: 100
+  save_checkpoint_freq: !!float 3000
+  use_tb_logger: True
+

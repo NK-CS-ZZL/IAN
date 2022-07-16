@@ -1,0 +1,34 @@
+name: DPR_continue
+model_type: DeepPortraitRelightingModel
+scale: 1
+num_gpu: 1 # set num_gpu: 0 for cpu mode
+gpu_id: "0"
+manual_seed: 10
+rank: 0
+world_size: 1
+parallel: False
+
+datasets:
+  test:
+    name: DPRData
+    type: DPRDataset
+    test_mode: true
+    dataroot: data/DPR_dataset
+
+
+
+# network structures
+network_g:
+  type: "DPRNet"
+  baseFilter: 16
+
+val:
+  save_tb_img: false
+  save_tb_select: ~ 
+  save_img: true
+
+
+# path
+path:
+  pretrain_network_g: ~
+  strict_load_g: true

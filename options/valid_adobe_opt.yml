@@ -1,0 +1,45 @@
+name: DPR_real
+model_type: PyramidRelightingModel
+layers: 3
+scale_factor: 2
+interp_mode: bicubic
+gpu_id: '0'
+scale: 1
+crop_border: ~  
+num_gpu: 1  # set num_gpu: 0 for cpu mode
+manual_seed: 0
+rank: 0
+parallel: False
+datasets:
+  test_1:  # the 1st test dataset
+    name: AdobeMultiIllumination
+    type: AdobeMultiIlluminationOnetoOneDataset
+    dataroot: ./data/MultiIllumination/test
+    input_dir: 0
+    gt_dir: 17
+
+
+
+# network structures
+network_g:
+  type: "Relighter"
+val:
+  save_tb_img: false
+  save_tb_select: ~ 
+  save_img: true
+
+  metrics:
+    psnr:
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: false
+    ssim: # metric name, can be arbitrary
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: false
+
+
+# path
+path:
+  pretrain_network_g: ~
+  strict_load_g: true
