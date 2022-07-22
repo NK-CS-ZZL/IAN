@@ -1,6 +1,6 @@
 # IAN (TIP 2022)
 ## Introduction
-This repository is the official implementation of **Designing An Illumination-Aware Network for Deep Image Relighting**. [[Paper (TBD)]]() <a href="#demos">[Demos]</a>
+This repository is the official implementation of **Designing An Illumination-Aware Network for Deep Image Relighting**. [[Paper]](https://arxiv.org/abs/2207.10582) <a href="#demos">[Demos]</a>
 > Designing An Illumination-Aware Network for Deep Image Relighting
 > 
 > [Zuo-Liang Zhu](https://github.com/NK-CS-ZZL), [Zhen Li](https://paper99.github.io/), [Rui-Xun Zhang](https://www.math.pku.edu.cn/teachers/ZhangRuixun%20/index.html), [Chun-Le Guo](https://mmcheng.net/clguo/), [Ming-Ming Cheng](https://mmcheng.net/)
