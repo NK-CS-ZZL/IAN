@@ -63,7 +63,7 @@ You can download all pretrained models from this [Google Driver](https://drive.g
     title = {Designing An Illumination-Aware Network for Deep Image Relighting},
     journal = {IEEE Transactions on Image Processing},
     year= {2022},
-    doi = {TBD}
+    doi = {10.1109/TIP.2022.3195366}
 }
 ```
 ## Acknowledge
