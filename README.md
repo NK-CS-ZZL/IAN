@@ -62,7 +62,7 @@ You can download all pretrained models from this [Google Driver](https://drive.g
     author = {Zuo-Liang Zhu, Zhen Li, Rui-Xun Zhang, Chun-Le Guo, Ming-Ming Cheng},
     title = {Designing An Illumination-Aware Network for Deep Image Relighting},
     journal = {IEEE Transactions on Image Processing},
-    year= {2022},
+    year = {2022},
     doi = {10.1109/TIP.2022.3195366}
 }
 ```
