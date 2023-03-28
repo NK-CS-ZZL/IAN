@@ -41,8 +41,8 @@ datasets:
 
 # network structures
 network_g:
-  type: "Relighter"
-
+  type: "One2One_noaux"
+  
 
 # path
 path:

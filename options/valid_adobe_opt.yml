@@ -22,7 +22,8 @@ datasets:
 
 # network structures
 network_g:
-  type: "Relighter"
+  type: "One2One_noaux"
+
 val:
   save_tb_img: false
   save_tb_select: ~ 
@@ -41,5 +42,5 @@ val:
 
 # path
 path:
-  pretrain_network_g: ~
+  pretrain_network_g: pretrained/MutliIllumination.pth
   strict_load_g: true

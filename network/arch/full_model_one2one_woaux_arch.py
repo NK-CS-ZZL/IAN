@@ -305,7 +305,6 @@ class One2One_noaux(nn.Module):
     def forward(self, x, enable_layers=None):
         x = x[0]
         input_rgb=x
-        enc_c = self.cond_encoder(input_rgb)
         ## for the 1/4 res
         input_rgb14 = F.interpolate(input_rgb, scale_factor=0.25, mode='bilinear',align_corners=align_corners)
         # print(enc_c[2].shape)

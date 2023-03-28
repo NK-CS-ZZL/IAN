@@ -35,5 +35,6 @@ val:
 
 # path
 path:
-  pretrain_network_g: ~
+  pretrain_network_g: pretrained/PortraitWithNormal.pth
+  # pretrain_network_g: pretrained/PortraitWithoutNormal.pth
   strict_load_g: true

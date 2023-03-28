@@ -50,5 +50,5 @@ val:
 
 # path
 path:
-  pretrain_network_g: ~
+  pretrain_network_g: pretrained/VIDITOne2One.pth
   strict_load_g: true

@@ -19,3 +19,4 @@ package
 results
 result*
 *__pycache__*
+*.pth
