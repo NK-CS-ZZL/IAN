@@ -43,8 +43,8 @@ def cal_normal(d_im):
 if __name__ == '__main__':
 
     # input_dir = args.input_dir
-    input_dir = "data/supplement/train/depth"
-    output_dir = 'data/supplement/train/normals'
+    input_dir = "data/test/depth"
+    output_dir = 'data/test/normals'
     # output_dir = args.save_dir
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)

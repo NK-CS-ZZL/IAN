@@ -62,7 +62,7 @@ datasets:
 # network structures
 network_g:
   type: "One2One"
-  short_connection: false
+  short_connection: true
   aux_channels: 4
 
 # path
