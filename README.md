@@ -20,7 +20,7 @@ This repository is the official implementation of **Designing An Illumination-Aw
 + DPR dataset [[Paper](https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhou_Deep_Single-Image_Portrait_Relighting_ICCV_2019_paper.pdf)] [[Download](https://drive.google.com/drive/folders/10luekF8vV5vo2GFYPRCe9Rm2Xy2DwHkT?usp=sharing)]
 ### Normal generation on the VIDIT dataset
 + Place the one2one training data into folders `./data/one2one/train/depth`, `./data/one2one/train/input`, `./data/one2one/train/target`
-+ Place the any2any training data into folders `./data/any2any/train/depth`, `./data/any2any/train/input`, `./data/any2any/train/target`
++ Place the any2any training data into folders `./data/any2any/train/depth` (all '.npy' files), `./data/any2any/train/input` (all RGB images)
 + Place the one2one validation data into folders `./data/validation/train/depth`, `./data/validation/train/input`, `./data/validation/train/target`
 + Run `gen_train_data.sh` to obtain full training and validation data.
 
